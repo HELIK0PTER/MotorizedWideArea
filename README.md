@@ -5,7 +5,7 @@
 Le projet vise à développer une application de location de voitures en JavaFX. Les clients pourront choisir parmi les 10 plus grandes villes de France pour la prise en charge et la restitution des véhicules.
 
 ### Besoins et Exigences
-L'application offrira une sélection de véhicules adaptée au nombre de passagers : citadines, berlines, SUV et minibus. Les utilisateurs pourront créer un compte, rechercher des véhicules, effectuer des réservations et gérer leurs informations personnelles.
+L'application offrira une sélection de véhicules adaptée au nombre de passagers : familiales, sportives, citadines, berlines, SUV et minibus. Les utilisateurs pourront créer un compte, rechercher des véhicules, effectuer des réservations et gérer leurs informations personnelles.
 
 ### Spécifications Fonctionnelles
 Description détaillée des fonctionnalités de l'application, y compris l'interface utilisateur pour la recherche de véhicules, la sélection des villes, la réservation et la gestion de compte.
@@ -69,4 +69,9 @@ Plan pour la maintenance continue et les mises à jour de l'application, ainsi q
 - Gérer les comptes utilisateurs et les rôles.
 - Configurer les paramètres du système.
 - Assurer la sécurité des données et la conformité.
+
+
+### Diagramme de classe UML
+
+!['UML Motorized Wide Area.png']('UML Motorized Wide Area.png')
 
