@@ -73,5 +73,5 @@ Plan pour la maintenance continue et les mises à jour de l'application, ainsi q
 
 ### Diagramme de classe UML
 
-!['UML Motorized Wide Area.png']('UML Motorized Wide Area.png')
+![UML_Motorized_Wide_Area.png](UML_Motorized_Wide_Area.png)
 
