@@ -46,7 +46,7 @@ Plan pour la maintenance continue et les mises à jour de l'application, ainsi q
 
 ### Diagramme de Cas d'Utilisation
 
-![img_1.png](img_1.png)
+![UseCase](UseCase.jpg)
 
 # Cas d'Utilisation
 
@@ -73,5 +73,5 @@ Plan pour la maintenance continue et les mises à jour de l'application, ainsi q
 
 ### Diagramme de classe UML
 
-![UML_Motorized_Wide_Area.png](UML_Motorized_Wide_Area.png)
+![UML](UML.png)
 
