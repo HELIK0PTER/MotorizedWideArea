@@ -19,6 +19,7 @@ L'application sera développée en JavaFX. Les choix techniques supplémentaires
 ### Planification et Méthodologie
 Utilisation d'une méthodologie Agile pour le développement de l'application, avec des sprints et des revues régulières pour assurer un progrès constant. La planification détaillée du projet, incluant le diagramme de Gantt, est réalisée à l'aide de l'outil Jira, ce qui permet une organisation efficace des tâches et une meilleure visibilité sur l'avancement du projet. Toutes les versions du code source et les sauvegardes du projet sont gérées sur GitHub, offrant un contrôle de version robuste et facilitant la collaboration entre les membres de l'équipe de développement.
 
+Jira : https://nihoncollection.atlassian.net/jira/software/projects/THACK/boards/4?atlOrigin=eyJpIjoiMmM1ZWJiMmZjNmE0NGUxZmFlOTVjMjI1Mjk0YWFiOGEiLCJwIjoiaiJ9
 
 
 ### Critères de Qualité et de Performance
