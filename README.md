@@ -59,3 +59,8 @@ Des tests seront effectués pour garantir la performance, la réactivité et la 
 
 ![UML](UML.png)
 
+### Diagramme GANTT
+
+![GANTT MWA](https://github.com/HELIK0PTER/MotorizedWideArea/assets/110680560/95b309c9-f3ef-4df9-a8fd-fc1e6034cbd1)
+
+
