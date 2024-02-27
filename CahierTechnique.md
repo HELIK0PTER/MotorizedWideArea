@@ -20,3 +20,7 @@ Voiture (id : int(7), marque : varchar(100), modele : varchar(100), typeVehicule
 Clé primaire : id (auto-incrémenté)
 Clé étrangère : /
 
+
+### Diagramme de classe UML
+
+![UML](UML.png)
