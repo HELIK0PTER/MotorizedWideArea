@@ -54,10 +54,9 @@ Des tests seront effectués pour garantir la performance, la réactivité et la 
 - Configurer les paramètres du système.
 - Assurer la sécurité des données et la conformité.
 
-### Diagramme GANTT
-
+## Diagramme GANTT
 ![GANT.png](GANT.png)
 
+# Maquette
 ### Maquette de l'inteface de connexion
-
 ![maquette_connexion.png](maquette_connexion.png)
