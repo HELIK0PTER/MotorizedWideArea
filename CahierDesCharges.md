@@ -25,9 +25,6 @@ Jira : https://nihoncollection.atlassian.net/jira/software/projects/THACK/boards
 ### Critères de Qualité et de Performance
 Des tests seront effectués pour garantir la performance, la réactivité et la fiabilité de l'application sur différents systèmes d'exploitation.
 
-
-
-
 ### Diagramme de Cas d'Utilisation
 
 ![UseCase](UseCase.jpg)
@@ -56,6 +53,9 @@ Des tests seront effectués pour garantir la performance, la réactivité et la 
 
 ## Diagramme GANTT
 ![GANT.png](GANT.png)
+
+## Diagramme de Classe UML
+![UML](UML.png)
 
 # Maquette
 ### Maquette de l'inteface de connexion
