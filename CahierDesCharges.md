@@ -2,7 +2,7 @@
 ## Projet de Location de Voitures - Motorized Wide Area
 
 ### Introduction et Contexte
-Le projet vise à développer une application de location de voitures en JavaFX. Les utilisateurs pourront choisir parmi les 10 plus grandes villes de France pour la prise en charge et la restitution des véhicules.
+Le projet vise à développer une application de location de voitures en JavaFX. Les utilisateurs pourront choisir parmi 10 agences pour la prise en charge et la restitution des véhicules. Il sera possible de gérer la flotte automobile, les réservations et les clients.
 
 ### Besoins et Exigences
 L'application offrira une sélection de véhicules adaptée au nombre de passagers : familiales, sportives, citadines, berlines, SUV et minibus. Les utilisateurs (interne) pourront créer un compte, rechercher des véhicules, effectuer des réservations et gérer leurs informations personnelles des clients.

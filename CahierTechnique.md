@@ -1,9 +1,8 @@
 # Cahier technique
 
 ## A quoi sert le projet / pour qui ?
-Le projet vise à développer une application de location de voitures en JavaFX. Les utilisateurs pourront choisir parmi
-les 10 plus grandes villes de France pour la prise en charge et la restitution des véhicules.  
-C'est une application métier qui s'adresse donc à une entreprise de location de voitures.
+Le projet vise à développer une application de location de voitures en JavaFX. Les utilisateurs pourront choisir parmi 10 agences pour la prise en charge et la restitution des véhicules. Il sera possible de gérer la flotte automobile, les réservations et les clients.
+Ce projet est destiné uniquement aux employés de l'entreprise de location de voitures. (logiciel de gestion)
 
 ## Gantt
 ![GANT.png](GANT.png)  
@@ -30,27 +29,28 @@ C'est une application métier qui s'adresse donc à une entreprise de location d
 
 ## Modèle relationnel
 
-**User** (id : int(7), nom : varchar(100), prenom : varchar(100), role : enum(...))  
-Clé primaire : id (auto-incrémenté)  
-Clé étrangère : /
+**User** (**id** : int(7), **nom** : varchar(100), prenom : varchar(100), role : enum(...))  
+**Clé primaire** : id (auto-incrémenté)  
+**Clé étrangère** : /
 
-**Client** (id : int(7), nom : varchar(100), prenom : varchar(100), email : varchar(100), dateNaiss : Date, telephone : varchar(10))  
-Clé primaire : id (auto-incrémenté)  
-Clé étrangère : /
+**Client** (**id** : int(7), **nom** : varchar(100), **prenom** : varchar(100), email : varchar(100), dateNaiss : Date, telephone : varchar(10))  
+**Clé primaire** : id (auto-incrémenté)  
+**Clé étrangère** : /
 
-**Reservation** (id : int(7), idClient : int(7), idVoiture : int(7) ,dateDebut : Date, dateFin : Date, prixTotal : int, agenceDebut : enum(Agence), agenceFin : enum(Agence), incident : Boolean)  
-Clé primaire : id (auto-incrémenté)  
-Clé étrangère : 
-    idClient -> Client.id
-    idVoiture -> Voiture.id
+**Reservation** (**id** : int(7), **idClient** : int(7), **idVoiture** : int(7) ,**dateDebut** : Date, **dateFin** : Date, **prixTotal** : int, **agenceDebut** : enum(Agence), **agenceFin** : enum(Agence), **incident** : Boolean)  
+**Clé primaire** : id (auto-incrémenté)  
+**Clé étrangère** :
+idClient -> Client.id
+idVoiture -> Voiture.id
 
-**Voiture** (id : int(7), marque : varchar(100), modele : varchar(100), typeVehicule : enum(...), statutVehicule : enum(...), agence : enum(...), prix : float(7,2))  
-Clé primaire : id (auto-incrémenté)  
-Clé étrangère : /
+**Voiture** (**id** : int(7), **marque** : varchar(100), **modele** : varchar(100), **immatriculation** varchar(10),**typeVehicule** : enum(...), **statutVehicule** : enum(...), **agence** : enum(...), **prix** : float(7,2))  
+**Clé primaire** : id (auto-incrémenté)  
+**Clé étrangère** : /
 
 
 ### Rappel du diagramme de classe UML
-
 ![UML](UML.png)
 
 ## Fichier SQL pour la BDD
+Le fichier SQL pour la base de données est disponible ici :  
+[DB.sql](DB.sql)
