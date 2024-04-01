@@ -1,6 +1,9 @@
-CREATE DATABASE IF NOT EXISTS motorized_wide_area;
+USE matheuskg_mwa;
 
-USE motorized_wide_area;
+DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Client;
+DROP TABLE IF EXISTS Voiture;
+DROP TABLE IF EXISTS Reservation;
 
 CREATE TABLE User (
                       id INT(7) AUTO_INCREMENT PRIMARY KEY,

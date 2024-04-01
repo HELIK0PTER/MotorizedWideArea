@@ -58,5 +58,6 @@ Des tests seront effectués pour garantir la performance, la réactivité et la 
 ![UML](UML.png)
 
 # Maquette
+
 ### Maquette de l'inteface de connexion
 ![maquette_connexion.png](maquette_connexion.png)
