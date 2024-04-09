@@ -24,7 +24,7 @@
       <artifactId>javafx-fxml</artifactId>
       <version>17.0.6</version>
     </dependency>
-<dependency>
+    <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-web</artifactId>
       <version>17.0.6</version>
@@ -34,7 +34,7 @@
         <artifactId>javafx-swing</artifactId>
         <version>17.0.6</version>
       </dependency>
-<dependency>
+    <dependency>
       <groupId>org.controlsfx</groupId>
       <artifactId>controlsfx</artifactId>
       <version>11.1.2</version>
@@ -77,18 +77,25 @@
         </exclusion>
       </exclusions>
     </dependency>
-<dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.33</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>${junit.version}</version>
+      <version>5.10.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>  </dependencies>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -110,7 +117,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>fr.ecole.motorizedwidearea_app/app.motorizedwidearea.HelloApplication</mainClass>
+              <mainClass>MainApp</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

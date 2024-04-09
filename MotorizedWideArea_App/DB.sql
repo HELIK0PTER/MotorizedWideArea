@@ -1,9 +1,9 @@
 USE matheuskg_mwa;
 
-DROP TABLE IF EXISTS User;
-DROP TABLE IF EXISTS Client;
-DROP TABLE IF EXISTS Voiture;
 DROP TABLE IF EXISTS Reservation;
+DROP TABLE IF EXISTS Voiture;
+DROP TABLE IF EXISTS Client;
+DROP TABLE IF EXISTS User;
 
 CREATE TABLE User (
                       id INT(7) AUTO_INCREMENT PRIMARY KEY,
@@ -28,9 +28,9 @@ CREATE TABLE Voiture (
                          immatriculation VARCHAR(10),
                          typeVehicule ENUM('SUV', 'MINIBUS', 'FAMILIALE', 'CITADINE', 'BERLINE', 'SPORTIVE'),
                          statutVehicule ENUM('DISPONIBLE', 'EN_MAINTENANCE', 'RESERVE'),
-                         agence ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'),
+                         agence ENUM('PARIS', 'MARSEILLE', 'LYON', 'TOULOUSE', 'NICE', 'NANTES', 'STRASBOURG', 'MONTPELLIER', 'BORDEAUX', 'LILLE'),
                          prix FLOAT(7,2)
-    );
+);
 
 CREATE TABLE Reservation (
                              id INT(7) AUTO_INCREMENT PRIMARY KEY,
@@ -39,8 +39,8 @@ CREATE TABLE Reservation (
                              dateDebut DATE,
                              dateFin DATE,
                              prixTotal INT,
-                             agenceDebut ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'),
-                             agenceFin ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'),
+                             agenceDebut ENUM('PARIS', 'MARSEILLE', 'LYON', 'TOULOUSE', 'NICE', 'NANTES', 'STRASBOURG', 'MONTPELLIER', 'BORDEAUX', 'LILLE'),
+                             agenceFin ENUM('PARIS', 'MARSEILLE', 'LYON', 'TOULOUSE', 'NICE', 'NANTES', 'STRASBOURG', 'MONTPELLIER', 'BORDEAUX', 'LILLE'),
                              incident BOOLEAN,
                              FOREIGN KEY (idClient) REFERENCES Client(id),
                              FOREIGN KEY (idVoiture) REFERENCES Voiture(id)
@@ -58,6 +58,6 @@ INSERT INTO Voiture (marque, modele, immatriculation, typeVehicule, statutVehicu
 INSERT INTO Voiture (marque, modele, immatriculation, typeVehicule, statutVehicule, agence, prix) VALUES ('Renault', 'Espace', 'EF-456-GH', 'MINIBUS', 'DISPONIBLE', '2', '60');
 INSERT INTO Voiture (marque, modele, immatriculation, typeVehicule, statutVehicule, agence, prix) VALUES ('Citroen', 'C4', 'IJ-789-KL', 'CITADINE', 'DISPONIBLE', '3', '40');
 
-INSERT INTO Reservation (idClient, idVoiture, dateDebut, dateFin, prixTotal, agenceDebut, agenceFin, incident) VALUES ('1', '1', '2021-01-01', '2021-01-02', '50', '1', '1', '0');
-INSERT INTO Reservation (idClient, idVoiture, dateDebut, dateFin, prixTotal, agenceDebut, agenceFin, incident) VALUES ('2', '2', '2021-01-01', '2021-01-02', '60', '2', '2', '0');
-INSERT INTO Reservation (idClient, idVoiture, dateDebut, dateFin, prixTotal, agenceDebut, agenceFin, incident) VALUES ('3', '3', '2021-01-01', '2021-01-02', '40', '3', '3', '0');
+INSERT INTO Reservation (idClient, idVoiture, dateDebut, dateFin, prixTotal, agenceDebut, agenceFin, incident) VALUES ('1', '1', '2021-01-01', '2021-01-02', '50', 'PARIS', 'MARSEILLE', '0');
+INSERT INTO Reservation (idClient, idVoiture, dateDebut, dateFin, prixTotal, agenceDebut, agenceFin, incident) VALUES ('2', '2', '2021-01-01', '2021-01-02', '60', 'MARSEILLE', 'LYON', '1');
+INSERT INTO Reservation (idClient, idVoiture, dateDebut, dateFin, prixTotal, agenceDebut, agenceFin, incident) VALUES ('3', '3', '2021-01-01', '2021-01-02', '40', 'LYON', 'TOULOUSE', '0');

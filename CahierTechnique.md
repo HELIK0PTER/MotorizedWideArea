@@ -53,4 +53,4 @@ idVoiture -> Voiture.id
 
 ## Fichier SQL pour la BDD
 Le fichier SQL pour la base de données est disponible ici :  
-[DB.sql](DB.sql)
+[DB.sql](MotorizedWideArea_App/DB.sql)
