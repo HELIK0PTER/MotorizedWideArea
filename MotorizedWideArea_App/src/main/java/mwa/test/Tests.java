@@ -1,4 +1,4 @@
-package test;
+package mwa.test;
 
 // classe pour les tests unitaires
 public class Tests {
