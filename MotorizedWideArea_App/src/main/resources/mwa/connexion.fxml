@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mwa.controllers.Connexion">
+   <children>
+      <Ellipse layoutX="292.0" layoutY="218.0" radiusX="197.0" radiusY="148.0" rotate="-20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7129629850387573" green="1.0" blue="0.8612654209136963" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007662835249042145">
+                     <color>
+                        <Color red="0.7129629850387573" green="1.0" blue="0.8612654209136963" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.37962964177131653" green="1.0" blue="0.5347222089767456" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Ellipse>
+      <Label alignment="CENTER" layoutX="227.0" layoutY="123.0" prefHeight="52.0" prefWidth="140.0" text="Connexion" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <TextField fx:id="nom_input" layoutX="212.0" layoutY="204.0" promptText="nom" />
+      <TextField fx:id="prenom_input" layoutX="212.0" layoutY="237.0" promptText="prenom" />
+      <Button fx:id="login_button" layoutX="212.0" layoutY="271.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Se connecter" />
+      <Label fx:id="login_message" alignment="TOP_CENTER" layoutX="205.0" layoutY="310.0" prefHeight="26.0" prefWidth="190.0" textFill="#ff5a5a">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Text layoutX="163.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prénom" />
+      <Text layoutX="180.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom" />
+   </children>
+</AnchorPane>
