@@ -1,6 +1,6 @@
-package models;
+package mwa.models;
 
-import models.types.Agence;
+import mwa.models.types.Agence;
 
 public class Reservation {
     private int id;

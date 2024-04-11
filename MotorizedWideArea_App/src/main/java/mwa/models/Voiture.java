@@ -1,8 +1,8 @@
-package models;
+package mwa.models;
 
-import models.types.TypeVehicule;
-import models.types.StatutVehicule;
-import models.types.Agence;
+import mwa.models.types.TypeVehicule;
+import mwa.models.types.StatutVehicule;
+import mwa.models.types.Agence;
 
 public class Voiture {
     private int id;

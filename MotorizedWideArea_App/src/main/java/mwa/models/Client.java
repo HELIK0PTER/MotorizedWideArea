@@ -1,4 +1,4 @@
-package models;
+package mwa.models;
 
 import java.util.Date;
 

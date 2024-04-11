@@ -1,6 +1,6 @@
-package models;
+package mwa.models;
 
-import models.types.Role;
+import mwa.models.types.Role;
 
 public class User {
     private int id;
@@ -19,6 +19,11 @@ public class User {
         this.nom = nom;
         this.prenom = prenom;
         this.role = role;
+    }
+
+    public User(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
     }
 
     public int getId() {

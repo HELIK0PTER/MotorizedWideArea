@@ -1,4 +1,4 @@
-package models.types;
+package mwa.models.types;
 
 public enum Agence { // 10 villes
     PARIS,

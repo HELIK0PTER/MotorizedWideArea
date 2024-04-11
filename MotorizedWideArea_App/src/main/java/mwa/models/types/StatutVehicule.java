@@ -1,4 +1,4 @@
-package models.types;
+package mwa.models.types;
 
 public enum StatutVehicule {
     DISPONIBLE,
