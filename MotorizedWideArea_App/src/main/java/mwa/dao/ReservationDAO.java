@@ -1,4 +1,4 @@
-package dao;
+package mwa.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Reservation;
-import models.types.Agence;
+import mwa.models.Reservation;
+import mwa.models.types.Agence;
 
 public class ReservationDAO {
 

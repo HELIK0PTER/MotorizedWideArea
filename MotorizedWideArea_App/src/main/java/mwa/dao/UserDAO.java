@@ -1,4 +1,4 @@
-package dao;
+package mwa.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.User;
-import models.types.Role;
+import mwa.models.User;
+import mwa.models.types.Role;
 
 public class UserDAO {
 

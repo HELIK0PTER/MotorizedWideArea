@@ -1,4 +1,4 @@
-package dao;
+package mwa.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Voiture;
-import models.types.TypeVehicule;
-import models.types.StatutVehicule;
-import models.types.Agence;
+import mwa.models.Voiture;
+import mwa.models.types.TypeVehicule;
+import mwa.models.types.StatutVehicule;
+import mwa.models.types.Agence;
 
 public class VoitureDAO {
 

@@ -1,4 +1,4 @@
-package dao;
+package mwa.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Client;
+import mwa.models.Client;
 
 public class ClientDAO {
     private static final String INSERT_CLIENTS_SQL = "INSERT INTO Client (nom, prenom, email, dateNaiss, telephone) VALUES (?, ?, ?, ?, ?);";
