@@ -10,10 +10,10 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
+    // initialisation de l'application
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/mwa/Connexion.fxml"));
-
+        Parent root = FXMLLoader.load(getClass().getResource("/mwa/connexion.fxml"));
         stage.setTitle("Motorized Wide Area");
         Scene scene = new Scene(root, 600, 400);
         stage.setScene(scene);
