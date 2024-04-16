@@ -16,4 +16,11 @@ module mwa {
 
     opens mwa.controllers to javafx.fxml;
     exports mwa.controllers;
+
+    opens mwa.models to javafx.base;
+    exports mwa.models;
+
+    opens mwa.dao to javafx.base;
+    exports mwa.dao;
+
 }

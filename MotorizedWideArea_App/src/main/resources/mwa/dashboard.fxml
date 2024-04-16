@@ -1,169 +1,690 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mwa.controllers.Dashboard">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane fx:id="tabPane" prefHeight="671.0" prefWidth="919.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mwa.controllers.Dashboard">
     <tabs>
         <!-- Onglet Gestion Clients -->
         <Tab text="Gestion Clients">
             <content>
                 <VBox spacing="10">
-                    <TableView fx:id="clientsTable">
-                        <columns>
-                            <TableColumn text="ID">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="id" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Nom">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="nom" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Prénom">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="prenom" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Email">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="email" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Date de Naissance">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="dateNaiss" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Téléphone">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="telephone" />
-                                </cellValueFactory>
-                            </TableColumn>
-                        </columns>
-                    </TableView>
+               <SplitPane dividerPositions="0.528770706190061" prefHeight="633.0" prefWidth="919.0">
+                  <items>
+                          <TableView fx:id="clientsTable" onMouseClicked="#selectClient" prefHeight="400.0" prefWidth="489.0">
+                              <columns>
+                                  <TableColumn prefWidth="30.39999395608902" text="ID">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="id" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="71.99996948242188" text="Nom">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="nom" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="83.99993896484375" text="Prénom">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="prenom" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="91.20001220703125" text="Email">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="email" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn minWidth="1.5999755859375" prefWidth="104.79998779296875" text="Date de Naissance">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="dateNaiss" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="102.39996337890625" text="Téléphone">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="telephone" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                              </columns>
+                          </TableView>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="390.0">
+                        <children>
+                           <VBox fx:id="AddClientForm" layoutX="11.0" layoutY="-1.0" prefHeight="398.0" prefWidth="206.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout" textAlignment="CENTER" wrappingWidth="206.13671493530273">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Id : Auto" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" />
+                                 <TextField fx:id="AddClientNom" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" />
+                                 <TextField fx:id="AddClientPrenom" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                                 <TextField fx:id="AddClientEmail" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date de Naissance" />
+                                 <DatePicker fx:id="AddClientDateNaiss" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+                                 <TextField fx:id="AddClientTel" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#addClient" text="Submit" />
+                                 <Text fx:id="AddClientMessage" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="205.33678817749023" />
+                              </children>
+                           </VBox>
+                           <VBox fx:id="EditClientForm" layoutX="11.0" layoutY="-1.0" prefHeight="398.0" prefWidth="206.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier" textAlignment="CENTER" wrappingWidth="206.13671493530273">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Id : " />
+                                 <Text fx:id="EditClientID" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" />
+                                 <TextField fx:id="EditClientNom" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" />
+                                 <TextField fx:id="EditClientPrenom" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                                 <TextField fx:id="EditClientEmail" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date de Naissance" />
+                                 <DatePicker fx:id="EditClientDateNaiss" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+                                 <TextField fx:id="EditClientTel" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#editClient" text="Submit" />
+                              </children>
+                           </VBox>
+                           <VBox fx:id="DeleteClientForm" layoutX="10.0" layoutY="-1.0" prefHeight="398.0" prefWidth="206.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supprimer" textAlignment="CENTER" wrappingWidth="206.13671493530273">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous voulez supprimer l'utilisateur :" />
+                                 <Text fx:id="DeleteUserName" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmer son Id :" />
+                                 <TextField fx:id="DeleteUserID" prefHeight="26.0" prefWidth="81.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmer son prénom" />
+                                 <TextField fx:id="DeleteUserPrenom" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#deleteClient" text="Submit" />
+                                 <Text fx:id="DeleteSubmitMessage" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="206.93670272827148" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+                  </items>
+               </SplitPane>
                     <HBox spacing="10">
-                        <Button text="Ajouter" onAction="#addClient"/>
-                        <Button text="Modifier" onAction="#editClient"/>
-                        <Button text="Supprimer" onAction="#deleteClient"/>
+                        <Button onAction="#openAddClientForm" text="Ajouter" />
+                        <Button onAction="#openEditClientForm" text="Modifier" />
+                        <Button onAction="#openDeleteClientForm" text="Supprimer" />
                     </HBox>
                 </VBox>
             </content>
         </Tab>
         <!-- Onglet Gestion de Flotte -->
         <Tab text="Gestion de Flotte">
-            <content>
-                <VBox spacing="10">
-                    <TableView fx:id="fleetTable">
-                        <columns>
-                            <TableColumn text="ID">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="id" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Marque">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="marque" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Modèle">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="modele" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Immatriculation">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="immatriculation" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Type">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="typeVehicule" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Statut">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="statutVehicule" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Agence">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="agence" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Prix">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="prix" />
-                                </cellValueFactory>
-                            </TableColumn>
-                        </columns>
-                    </TableView>
+         <content>
+                <VBox prefHeight="580.0" prefWidth="919.0" spacing="10">
+               <SplitPane dividerPositions="0.6998692240627724" prefHeight="583.0" prefWidth="919.0">
+                  <items>
+                          <TableView fx:id="flotteTable" onMouseClicked="#selectCar" prefHeight="542.0" prefWidth="665.0">
+                              <columns>
+                                  <TableColumn prefWidth="33.60000686645526" text="ID">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="id" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="83.19997787475586" text="Marque">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="marque" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="75.99996948242188" text="Modèle">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="modele" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="97.60002136230469" text="Immatriculation">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="immatriculation" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="90.39996337890625" text="Type">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="typeVehicule" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="100.800048828125" text="Statut">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="statutVehicule" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="92.0" text="Agence">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="agence" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="68.0" text="Prix">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="prix" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                              </columns>
+                          </TableView>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="390.0">
+                        <children>
+                           <VBox fx:id="AddCarForm" layoutX="8.0" prefHeight="570.0" prefWidth="256.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout" textAlignment="CENTER" wrappingWidth="255.73667526245117">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Id : Auto" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marque" wrappingWidth="52.385498046875" />
+                                 <TextField fx:id="AddCarMarque" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modèle" />
+                                 <TextField fx:id="AddCarModele" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Immatriculation" />
+                                 <TextField fx:id="AddCarImmatriculation" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type de vehicule" />
+                                 <ComboBox fx:id="AddCarType" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Statut du vehicule" />
+                                 <ComboBox fx:id="AddCarStatut" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agence" />
+                                 <ComboBox fx:id="AddCarAgence" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+                                 <HBox alignment="CENTER" prefHeight="22.0" prefWidth="256.0">
+                                    <children>
+                                       <TextField fx:id="AddCarPrix" />
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="174.13669776916504" />
+                                    </children>
+                                 </HBox>
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#addCar" text="Submit" />
+                                 <Text fx:id="AddCarMessage" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="205.33678817749023" />
+                              </children>
+                           </VBox>
+                           <VBox fx:id="EditCarForm" layoutX="10.0" layoutY="-1.0" prefHeight="580.0" prefWidth="251.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier" textAlignment="CENTER" wrappingWidth="255.73667526245117">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Id : " />
+                                 <Text fx:id="EditCarID" strokeType="OUTSIDE" strokeWidth="0.0" text="{Voiture}" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marque" wrappingWidth="52.385498046875" />
+                                 <TextField fx:id="EditCarMarque" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modèle" />
+                                 <TextField fx:id="EditCarModele" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Immatriculation" />
+                                 <TextField fx:id="EditCarImmatriculation" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type de vehicule" />
+                                 <ComboBox fx:id="EditCarType" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Statut du vehicule" />
+                                 <ComboBox fx:id="EditCarStatut" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agence" />
+                                 <ComboBox fx:id="EditCarAgence" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+                                 <HBox alignment="CENTER" prefHeight="22.0" prefWidth="256.0">
+                                    <children>
+                                       <TextField fx:id="EditCarPrix" />
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="174.13669776916504" />
+                                    </children>
+                                 </HBox>
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#editCar" text="Submit" />
+                              </children>
+                           </VBox>
+                           <VBox fx:id="DeleteCarForm" layoutX="10.0" layoutY="-1.0" prefHeight="428.0" prefWidth="254.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supprimer" textAlignment="CENTER" wrappingWidth="254.13669967651367">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous voulez supprimer l'utilisateur :" wrappingWidth="254.29258728027344" />
+                                 <Text fx:id="DeleteCarImmatriculation" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmer son Id :" />
+                                 <TextField fx:id="DeleteCarID" prefHeight="26.0" prefWidth="81.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmer son prénom" />
+                                 <TextField fx:id="DeleteCarMarque" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#deleteCar" text="Submit" />
+                                 <Text fx:id="DeleteCarMessage" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="206.93670272827148" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+                  </items>
+               </SplitPane>
                     <HBox spacing="10">
-                        <Button text="Ajouter" onAction="#addCar"/>
-                        <Button text="Modifier" onAction="#editCar"/>
-                        <Button text="Supprimer" onAction="#deleteCar"/>
+                        <Button onAction="#openAddCarForm" text="Ajouter" />
+                        <Button onAction="#openEditCarForm" text="Modifier" />
+                        <Button onAction="#openDeleteCarForm" text="Supprimer" />
                     </HBox>
                 </VBox>
-            </content>
+         </content>
         </Tab>
         <!-- Onglet Réservations -->
         <Tab text="Réservations">
             <content>
                 <VBox spacing="10">
-                    <TableView fx:id="reservationsTable">
-                        <columns>
-                            <TableColumn text="ID">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="id" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="ID Client">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="idClient" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="ID Voiture">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="idVoiture" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Début">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="dateDebut" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Fin">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="dateFin" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Prix Total">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="prixTotal" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Agence Début">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="agenceDebut" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Agence Fin">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="agenceFin" />
-                                </cellValueFactory>
-                            </TableColumn>
-                            <TableColumn text="Incident">
-                                <cellValueFactory>
-                                    <PropertyValueFactory property="incident" />
-                                </cellValueFactory>
-                            </TableColumn>
-                        </columns>
-                    </TableView>
+               <SplitPane dividerPositions="0.7085876198779424" prefHeight="605.0" prefWidth="919.0">
+                  <items>
+                          <TableView fx:id="reservationsTable" prefHeight="604.0" prefWidth="839.0">
+                              <columns>
+                                  <TableColumn prefWidth="34.39999465942401" text="ID">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="id" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="47.999996185302734" text="Client">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="idClient" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="60.79998779296875" text="Voiture">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="idVoiture" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="89.5999755859375" text="Début">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="dateDebut" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="94.40003967285156" text="Fin">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="dateFin" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="62.4000244140625" text="Prix Total">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="prixTotal" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="96.79998779296875" text="Agence Début">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="agenceDebut" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="95.199951171875" text="Agence Fin">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="agenceFin" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn minWidth="6.39996337890625" prefWidth="64.79998779296875" text="Incident">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="incident" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                              </columns>
+                          </TableView>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="390.0">
+                        <children>
+                           <VBox fx:id="AddCarForm1" layoutX="4.0" layoutY="4.0" prefHeight="570.0" prefWidth="256.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout" textAlignment="CENTER" wrappingWidth="255.73667526245117">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Id : Auto" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marque" wrappingWidth="52.385498046875" />
+                                 <TextField fx:id="AddCarMarque1" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modèle" />
+                                 <TextField fx:id="AddCarModele1" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Immatriculation" />
+                                 <TextField fx:id="AddCarImmatriculation1" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type de vehicule" />
+                                 <ComboBox fx:id="AddCarType1" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Statut du vehicule" />
+                                 <ComboBox fx:id="AddCarStatut1" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agence" />
+                                 <ComboBox fx:id="AddCarAgence1" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+                                 <HBox alignment="CENTER" prefHeight="22.0" prefWidth="256.0">
+                                    <children>
+                                       <TextField fx:id="AddCarPrix1" />
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="174.13669776916504" />
+                                    </children>
+                                 </HBox>
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#addCar" text="Submit" />
+                                 <Text fx:id="AddCarMessage1" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="205.33678817749023" />
+                              </children>
+                           </VBox>
+                           <VBox fx:id="EditCarForm1" layoutX="4.0" layoutY="-1.0" prefHeight="580.0" prefWidth="251.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier" textAlignment="CENTER" wrappingWidth="255.73667526245117">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Id : " />
+                                 <Text fx:id="EditCarID1" strokeType="OUTSIDE" strokeWidth="0.0" text="{Voiture}" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marque" wrappingWidth="52.385498046875" />
+                                 <TextField fx:id="EditCarMarque1" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modèle" />
+                                 <TextField fx:id="EditCarModele1" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Immatriculation" />
+                                 <TextField fx:id="EditCarImmatriculation1" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type de vehicule" />
+                                 <ComboBox fx:id="EditCarType1" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Statut du vehicule" />
+                                 <ComboBox fx:id="EditCarStatut1" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agence" />
+                                 <ComboBox fx:id="EditCarAgence1" prefWidth="150.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+                                 <HBox alignment="CENTER" prefHeight="22.0" prefWidth="256.0">
+                                    <children>
+                                       <TextField fx:id="EditCarPrix1" />
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="€" wrappingWidth="174.13669776916504" />
+                                    </children>
+                                 </HBox>
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#editCar" text="Submit" />
+                              </children>
+                           </VBox>
+                           <VBox fx:id="DeleteCarForm1" layoutX="5.0" prefHeight="428.0" prefWidth="227.0" visible="false">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supprimer" textAlignment="CENTER" wrappingWidth="254.13669967651367">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous voulez supprimer l'utilisateur :" wrappingWidth="254.29258728027344" />
+                                 <Text fx:id="DeleteCarImmatriculation1" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmer son Id :" />
+                                 <TextField fx:id="DeleteCarID1" prefHeight="26.0" prefWidth="81.0" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide" wrappingWidth="93.19610214233398">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmer son prénom" />
+                                 <TextField fx:id="DeleteCarMarque1" />
+                                 <Text fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="vide">
+                                    <font>
+                                       <Font />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#deleteCar" text="Submit" />
+                                 <Text fx:id="DeleteCarMessage1" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="206.93670272827148" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+                  </items>
+               </SplitPane>
                     <HBox spacing="10">
-                        <Button text="Ajouter" onAction="#addReservation"/>
-                        <Button text="Modifier" onAction="#editReservation"/>
-                        <Button text="Supprimer" onAction="#deleteReservation"/>
+                        <Button onAction="#addReservation" text="Ajouter" />
+                        <Button onAction="#editReservation" text="Modifier" />
+                        <Button onAction="#deleteReservation" text="Supprimer" />
                     </HBox>
                 </VBox>
             </content>
