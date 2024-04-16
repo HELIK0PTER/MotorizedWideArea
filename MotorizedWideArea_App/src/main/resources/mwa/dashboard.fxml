@@ -1,14 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="mwa.controllers.Dashboard"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mwa.controllers.Dashboard">
+    <tabs>
+        <!-- Onglet Gestion Clients -->
+        <Tab text="Gestion Clients">
+            <content>
+                <VBox spacing="10">
+                    <TableView fx:id="clientsTable">
+                        <columns>
+                            <TableColumn text="ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Nom">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="nom" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Prénom">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="prenom" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Email">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="email" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Date de Naissance">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="dateNaiss" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Téléphone">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="telephone" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10">
+                        <Button text="Ajouter" onAction="#addClient"/>
+                        <Button text="Modifier" onAction="#editClient"/>
+                        <Button text="Supprimer" onAction="#deleteClient"/>
+                    </HBox>
+                </VBox>
+            </content>
+        </Tab>
+        <!-- Onglet Gestion de Flotte -->
+        <Tab text="Gestion de Flotte">
+            <content>
+                <VBox spacing="10">
+                    <TableView fx:id="fleetTable">
+                        <columns>
+                            <TableColumn text="ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Marque">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="marque" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Modèle">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="modele" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Immatriculation">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="immatriculation" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Type">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeVehicule" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Statut">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="statutVehicule" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Agence">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="agence" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Prix">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="prix" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10">
+                        <Button text="Ajouter" onAction="#addCar"/>
+                        <Button text="Modifier" onAction="#editCar"/>
+                        <Button text="Supprimer" onAction="#deleteCar"/>
+                    </HBox>
+                </VBox>
+            </content>
+        </Tab>
+        <!-- Onglet Réservations -->
+        <Tab text="Réservations">
+            <content>
+                <VBox spacing="10">
+                    <TableView fx:id="reservationsTable">
+                        <columns>
+                            <TableColumn text="ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="ID Client">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="idClient" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="ID Voiture">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="idVoiture" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Début">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="dateDebut" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Fin">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="dateFin" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Prix Total">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="prixTotal" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Agence Début">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="agenceDebut" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Agence Fin">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="agenceFin" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Incident">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="incident" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10">
+                        <Button text="Ajouter" onAction="#addReservation"/>
+                        <Button text="Modifier" onAction="#editReservation"/>
+                        <Button text="Supprimer" onAction="#deleteReservation"/>
+                    </HBox>
+                </VBox>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
